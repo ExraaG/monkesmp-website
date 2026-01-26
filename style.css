@@ -38,7 +38,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px 30px;
     background: rgba(13, 18, 14, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
@@ -50,7 +50,7 @@ body {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     letter-spacing: 2px;
     user-select: none;
@@ -78,6 +78,14 @@ body {
     text-shadow: 0 0 10px var(--accent);
 }
 
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+}
+
 /* --- 4. HERO SECTION --- */
 .hero {
     height: 100vh;
@@ -90,6 +98,7 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
+    padding: 0 20px;
 }
 
 .overlay {
@@ -142,7 +151,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1;
     margin-bottom: 20px;
     text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
@@ -153,7 +162,7 @@ body {
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 40px;
     color: #ccc;
 }
@@ -161,15 +170,17 @@ body {
 .ip-box {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid #555;
-    padding: 15px 40px;
-    font-size: 1.5rem;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     border-radius: 10px;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     color: #aaa;
     cursor: pointer;
     transition: 0.1s ease;
+    max-width: 90vw;
+    word-break: break-all;
 }
 
 .ip-box:active {
@@ -182,9 +193,9 @@ body {
     user-select: none;
 }
 
-/* --- 5. SECTIONS & MELTS --- */
+/* --- 5. SECTIONS --- */
 .colored-section {
-    padding: 100px 20px;
+    padding: 60px 20px;
     width: 100%;
     position: relative;
     z-index: 10;
@@ -213,16 +224,17 @@ body {
 }
 
 .section-title {
-    font-size: 3rem;
-    margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
     text-shadow: 2px 2px #000;
 }
 
-/* --- 6. CARDS (FEATURES) --- */
+/* --- 6. CARDS & GRID --- */
+/* FIXED: Changed 280px to 220px so 4 items fit in one row */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .card {
@@ -241,10 +253,9 @@ body {
     background: #1a2a20;
 }
 
-/* EMOJI ICONS (Replaces mc-icon) */
+/* EMOJI ICONS */
 .emoji-icon {
     font-size: 4rem;
-    /* Big Emoji Size */
     margin-bottom: 15px;
     transition: transform 0.3s;
 }
@@ -273,7 +284,7 @@ body {
     background: var(--accent);
     color: black;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border-radius: 5px;
     transform: rotate(5deg);
@@ -285,7 +296,7 @@ body {
 .join-card {
     background: rgba(0, 0, 0, 0.6);
     border: 2px solid var(--danger);
-    padding: 50px;
+    padding: 30px;
     border-radius: 15px;
     text-align: center;
     max-width: 600px;
@@ -300,21 +311,21 @@ body {
     right: -15px;
     background: var(--danger);
     color: white;
-    padding: 8px 20px;
-    font-size: 1rem;
+    padding: 5px 15px;
+    font-size: 0.9rem;
     border-radius: 5px;
     transform: rotate(5deg);
 }
 
 .join-card h3 {
     color: var(--danger);
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
 .member-counter-box {
     background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     margin: 30px 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -323,8 +334,9 @@ body {
 .status-text {
     display: flex;
     justify-content: space-between;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .progress-bar-bg {
@@ -353,11 +365,13 @@ body {
     background: #5865F2;
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
-    padding: 15px 40px;
+    font-size: 1.2rem;
+    padding: 15px 30px;
     border-radius: 8px;
     transition: 0.3s;
     border: 2px solid #5865F2;
+    width: 100%;
+    max-width: 300px;
 }
 
 .discord-join-btn:hover {
@@ -384,22 +398,22 @@ body {
     }
 }
 
-/* --- 8. RULES --- */
+/* --- 8. RULES & ABOUT --- */
 .rule-list {
     list-style: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
 }
 
 .rule-list li {
-    padding: 20px;
+    padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: 0.3s;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .rule-list li:hover {
@@ -418,10 +432,9 @@ body {
     color: var(--green-glow);
 }
 
-/* --- 9. ABOUT --- */
 .about-card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 50px;
+    padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     max-width: 700px;
@@ -442,15 +455,9 @@ body {
     color: black;
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: inline-block;
     margin-bottom: 20px;
-}
-
-.about-card p {
-    color: #ccc;
-    font-size: 1.2rem;
-    line-height: 1.8;
 }
 
 .socials {
@@ -471,7 +478,7 @@ body {
     transform: scale(1.2);
 }
 
-/* --- 10. LOADER --- */
+/* --- 9. LOADER --- */
 .loader-wrapper {
     position: fixed;
     top: 0;
@@ -497,7 +504,7 @@ body {
     }
 }
 
-/* --- 11. PARTICLES & MONKE MODE --- */
+/* --- 10. PARTICLES & MONKE MODE --- */
 .particle {
     position: absolute;
     font-size: 2rem;
@@ -571,17 +578,51 @@ footer {
     color: #555;
 }
 
-/* RESPONSIVE */
+/* --- MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 18, 14, 0.98);
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 
     .hero h1 {
         font-size: 3rem;
     }
 
-    .card {
-        margin-bottom: 20px;
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .badge-exclusive {
+        font-size: 0.8rem;
+    }
+
+    /* Ensure grid is 1 column on very small phones */
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

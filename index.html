@@ -15,11 +15,16 @@
 
 <nav class="navbar">
     <div class="logo">MONKE<span class="highlight">SMP</span></div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#rules">Rules</a></li>
-        <li><a href="#join">How to Join</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#features" onclick="toggleMenu()">Features</a></li>
+        <li><a href="#rules" onclick="toggleMenu()">Rules</a></li>
+        <li><a href="#join" onclick="toggleMenu()">How to Join</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
     </ul>
 </nav>
 
@@ -142,6 +147,12 @@
     const INVITE_CODE = "Tj6EJsJHrR";
     const MAX_PLAYERS = 20;
     const BOT_COUNT = 3;
+
+    // --- MOBILE MENU TOGGLE ---
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
 
     // --- SECRET BUTTON ---
     let clickCount = 0;
