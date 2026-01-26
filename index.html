@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monke SMP | Return to Monke</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,7 +25,7 @@
 
 <header class="hero">
     <div class="overlay"></div>
-    <div class="hero-content hidden">
+    <div class="hero-content">
         <img id="hero-server-icon" src="" alt="" class="server-logo-float">
 
         <h1>RETURN TO <span class="highlight-text">MONKE</span></h1>
@@ -34,7 +33,7 @@
 
         <div class="ip-box no-select" id="secret-btn">
             <i class="fas fa-gamepad"></i>
-            <span id="ip-text">MonkeSMP</span>
+            <span id="ip-text">monkesmp.com</span>
         </div>
     </div>
 
@@ -46,9 +45,9 @@
 
 <section id="join" class="colored-section red-melt">
     <div class="container">
-        <h2 class="section-title hidden">Join the <span class="highlight">Tribe</span></h2>
+        <h2 class="section-title">Join the <span class="highlight">Tribe</span></h2>
 
-        <div class="join-card hidden">
+        <div class="join-card">
             <div class="badge-exclusive">LIMITED SPOTS</div>
             <h3>⚠️ EXCLUSIVE ACCESS ⚠️</h3>
             <p>To keep the gameplay high-quality and lag-free, the server is capped at <strong>20 Players</strong>.</p>
@@ -73,28 +72,32 @@
 
 <section id="features" class="colored-section green-melt">
     <div class="container">
-        <h2 class="section-title hidden">Jungle <span class="highlight">Features</span></h2>
+        <h2 class="section-title">Jungle <span class="highlight">Features</span></h2>
         <div class="grid">
-            <div class="card hidden">
-                <div class="icon">❤️</div>
-                <h3>Lifesteal</h3>
+            
+            <div class="card">
+                <img src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/1.20.1/items/golden_apple.png" class="mc-icon" alt="Golden Apple">
+                <h3>LIFESTEAL</h3>
                 <p>Hunt players. Steal hearts. If you hit 0 hearts, you are <strong>banned</strong>.</p>
             </div>
-            <div class="card hidden">
-                <div class="icon">🗿</div>
-                <h3>Totem Cooldown</h3>
+
+            <div class="card">
+                <img src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/1.20.1/items/totem_of_undying.png" class="mc-icon" alt="Totem">
+                <h3>TOTEM COOLDOWN</h3>
                 <p>No totem spamming. <strong>30s cooldown</strong> means death is real.</p>
             </div>
-            <div class="card hidden">
-                <div class="icon">⚓</div>
-                <h3>Revive Beacons</h3>
+
+            <div class="card">
+                <img src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/1.20.1/blocks/beacon.png" class="mc-icon" alt="Beacon">
+                <h3>REVIVE BEACONS</h3>
                 <p>Craft beacons to revive fallen teammates from the dead.</p>
             </div>
-            <div class="card hidden disabled-card">
+
+            <div class="card disabled-card">
                 <div class="badge-soon">COMING SOON</div>
-                <div class="icon">🧭</div>
-                <h3>Player Tracker</h3>
-                <p>Craftable compasses to hunt down the nearest player are in development.</p>
+                <img src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/1.20.1/items/recovery_compass_16.png" class="mc-icon" alt="Compass">
+                <h3>PLAYER TRACKER</h3>
+                <p>Craftable compasses to hunt down the nearest player.</p>
             </div>
         </div>
     </div>
@@ -102,24 +105,24 @@
 
 <section id="rules" class="colored-section dark-melt">
     <div class="container">
-        <h2 class="section-title hidden">Law of the <span class="highlight">Jungle</span></h2>
+        <h2 class="section-title">Law of the <span class="highlight">Jungle</span></h2>
         <ul class="rule-list">
-            <li class="hidden"><i class="fas fa-ban"></i> 🚫 No Hacking or X-Ray (Instant Ban)</li>
-            <li class="hidden"><i class="fas fa-skull"></i> 🚫 No Combat Logging (You die instantly)</li>
-            <li class="hidden"><i class="fas fa-bomb"></i> ✅ Griefing & Stealing is ALLOWED</li>
-            <li class="hidden"><i class="fas fa-handshake-slash"></i> ✅ Betrayal is part of the game</li>
+            <li><i class="fas fa-ban red-icon"></i> No Hacking or X-Ray (Instant Ban)</li>
+            <li><i class="fas fa-skull red-icon"></i> No Combat Logging (You die instantly)</li>
+            <li><i class="fas fa-check green-icon"></i> Griefing & Stealing is ALLOWED</li>
+            <li><i class="fas fa-handshake-slash green-icon"></i> Betrayal is part of the game</li>
         </ul>
     </div>
 </section>
 
 <section id="about" class="colored-section purple-melt">
     <div class="container">
-        <h2 class="section-title hidden">Meet the <span class="highlight">Creator</span></h2>
-        <div class="about-card hidden">
+        <h2 class="section-title">Meet the <span class="highlight">Creator</span></h2>
+        <div class="about-card">
             <div class="avatar-circle">
                 <img src="https://mc-heads.net/avatar/ExraaXD/100" alt="ExraaXD">
             </div>
-            <h3>Marsh</h3>
+            <h3>MARSH</h3>
             <span class="role-badge">Owner & Developer</span>
             <p>
                 Hi, I'm Marsh (ign: ExraaXD). I created Monke SMP to bring back chaotic fun.
@@ -140,57 +143,32 @@
     const MAX_PLAYERS = 20;
     const BOT_COUNT = 3;
 
-    // --- SECRET MONKE MODE (Now on the Center Button) ---
+    // --- SECRET BUTTON ---
     let clickCount = 0;
     const logoBtn = document.getElementById('secret-btn');
-
     if (logoBtn) {
         logoBtn.addEventListener('click', () => {
             clickCount++;
-
-            // FLASH EFFECT
-            logoBtn.style.borderColor = "#f9d71c";
-            logoBtn.style.color = "#f9d71c";
             logoBtn.style.transform = "scale(0.95)";
-
-            setTimeout(() => {
-                logoBtn.style.borderColor = "#555";
-                logoBtn.style.color = "#aaa";
-                logoBtn.style.transform = "scale(1)";
-            }, 100);
-
-            if (clickCount >= 6) {
-                activateMonkeMode();
-                clickCount = 0; // Reset
-            }
+            setTimeout(() => { logoBtn.style.transform = "scale(1)"; }, 100);
+            if (clickCount >= 6) { activateMonkeMode(); clickCount = 0; }
         });
     }
 
     function activateMonkeMode() {
         if(document.body.classList.contains('monke-mode')) return;
-
         alert("🍌 OOH OOH AH AH! SECRET MONKE MODE ACTIVATED! 🍌");
         document.body.classList.add('monke-mode');
-
-        // Add raining bananas
-        for(let i=0; i<50; i++) {
-            setTimeout(() => createRainBanana(), i * 150);
-        }
+        for(let i=0; i<50; i++) { setTimeout(() => createRainBanana(), i * 150); }
     }
 
     function createRainBanana() {
         const b = document.createElement('div');
         b.innerText = "🍌";
-        b.style.position = "fixed";
-        b.style.left = Math.random() * 100 + "vw";
-        b.style.top = "-50px";
-        b.style.fontSize = Math.random() * 30 + 20 + "px";
-        b.style.zIndex = "99999";
-        b.style.pointerEvents = "none";
+        b.style.position = "fixed"; b.style.left = Math.random() * 100 + "vw"; b.style.top = "-50px";
+        b.style.fontSize = Math.random() * 30 + 20 + "px"; b.style.zIndex = "99999"; b.style.pointerEvents = "none";
         b.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
         document.body.appendChild(b);
-
-        // Remove after animation
         setTimeout(() => { b.remove(); }, 5000);
     }
 
@@ -203,42 +181,26 @@
             if (data.guild && data.guild.icon) {
                 const iconUrl = `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png`;
                 const iconImg = document.getElementById('hero-server-icon');
-                if(iconImg) {
-                    iconImg.src = iconUrl;
-                    iconImg.style.display = "inline-block";
-                }
+                if(iconImg) { iconImg.src = iconUrl; iconImg.style.display = "inline-block"; }
             }
 
             if (data.approximate_member_count) {
-                const totalMembers = data.approximate_member_count;
-                let realPlayers = totalMembers - BOT_COUNT;
-                if (realPlayers < 0) realPlayers = 0;
-
+                let realPlayers = Math.max(0, data.approximate_member_count - BOT_COUNT);
                 const spotsLeft = MAX_PLAYERS - realPlayers;
-
                 document.getElementById('member-count').innerText = `${realPlayers} / ${MAX_PLAYERS}`;
-
-                const percentage = (realPlayers / MAX_PLAYERS) * 100;
-                const fill = document.getElementById('progress-fill');
-                fill.style.width = `${percentage}%`;
-
+                document.getElementById('progress-fill').style.width = `${(realPlayers / MAX_PLAYERS) * 100}%`;
+                
                 const spotsText = document.getElementById('spots-left');
                 if (spotsLeft <= 5) {
-                    fill.style.background = "#ff3b3b";
                     spotsText.innerHTML = `🔥 HURRY! Only <strong>${spotsLeft}</strong> spots left!`;
                 } else {
                     spotsText.innerHTML = `🟢 ${spotsLeft} spots available to join.`;
                 }
-
             } else { document.getElementById('member-count').innerText = "Unknown"; }
-        } catch (error) {
-            console.error(error);
-            document.getElementById('member-count').innerText = "Join Discord";
-        }
+        } catch (error) { document.getElementById('member-count').innerText = "Join Discord"; }
     }
     fetchDiscordStats();
 
-    // --- ANIMATIONS ---
     window.addEventListener('load', () => {
         const loader = document.querySelector('.loader-wrapper');
         if(loader) {
@@ -246,13 +208,6 @@
             setTimeout(() => { loader.style.display = 'none'; }, 500);
         }
     });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) { entry.target.classList.add('show'); }
-        });
-    });
-    document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 </script>
 </body>
 </html>
