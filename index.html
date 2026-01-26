@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monke SMP | Return to Monke</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="loader-wrapper">
+    <div class="banana-spinner">🍌</div>
+</div>
+
+<nav class="navbar">
+    <div class="logo">MONKE<span class="highlight">SMP</span></div>
+    <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#join">How to Join</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content hidden">
+        <img id="hero-server-icon" src="" alt="" class="server-logo-float">
+
+        <h1>RETURN TO <span class="highlight-text">MONKE</span></h1>
+        <p>The Wildest Lifesteal Experience in the Jungle.</p>
+
+        <div class="ip-box no-select" id="secret-btn">
+            <i class="fas fa-gamepad"></i>
+            <span id="ip-text">MonkeSMP</span>
+        </div>
+    </div>
+
+    <div class="particle p1">🍃</div>
+    <div class="particle p2">🍌</div>
+    <div class="particle p3">🍃</div>
+    <div class="particle p4">🌴</div>
+</header>
+
+<section id="join" class="colored-section red-melt">
+    <div class="container">
+        <h2 class="section-title hidden">Join the <span class="highlight">Tribe</span></h2>
+
+        <div class="join-card hidden">
+            <div class="badge-exclusive">LIMITED SPOTS</div>
+            <h3>⚠️ EXCLUSIVE ACCESS ⚠️</h3>
+            <p>To keep the gameplay high-quality and lag-free, the server is capped at <strong>20 Players</strong>.</p>
+
+            <div class="member-counter-box">
+                <div class="status-text">
+                    <span><i class="fas fa-users"></i> Real Players:</span>
+                    <span id="member-count" class="highlight">Loading...</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill" class="progress-bar-fill"></div>
+                </div>
+                <p id="spots-left" class="spots-text">checking availability...</p>
+            </div>
+
+            <a href="https://discord.gg/Tj6EJsJHrR" id="discord-btn" target="_blank" class="discord-join-btn pulse-btn">
+                <i class="fab fa-discord"></i> Claim Your Spot on Discord
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="colored-section green-melt">
+    <div class="container">
+        <h2 class="section-title hidden">Jungle <span class="highlight">Features</span></h2>
+        <div class="grid">
+            <div class="card hidden">
+                <div class="icon">❤️</div>
+                <h3>Lifesteal</h3>
+                <p>Hunt players. Steal hearts. If you hit 0 hearts, you are <strong>banned</strong>.</p>
+            </div>
+            <div class="card hidden">
+                <div class="icon">🗿</div>
+                <h3>Totem Cooldown</h3>
+                <p>No totem spamming. <strong>30s cooldown</strong> means death is real.</p>
+            </div>
+            <div class="card hidden">
+                <div class="icon">⚓</div>
+                <h3>Revive Beacons</h3>
+                <p>Craft beacons to revive fallen teammates from the dead.</p>
+            </div>
+            <div class="card hidden disabled-card">
+                <div class="badge-soon">COMING SOON</div>
+                <div class="icon">🧭</div>
+                <h3>Player Tracker</h3>
+                <p>Craftable compasses to hunt down the nearest player are in development.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rules" class="colored-section dark-melt">
+    <div class="container">
+        <h2 class="section-title hidden">Law of the <span class="highlight">Jungle</span></h2>
+        <ul class="rule-list">
+            <li class="hidden"><i class="fas fa-ban"></i> 🚫 No Hacking or X-Ray (Instant Ban)</li>
+            <li class="hidden"><i class="fas fa-skull"></i> 🚫 No Combat Logging (You die instantly)</li>
+            <li class="hidden"><i class="fas fa-bomb"></i> ✅ Griefing & Stealing is ALLOWED</li>
+            <li class="hidden"><i class="fas fa-handshake-slash"></i> ✅ Betrayal is part of the game</li>
+        </ul>
+    </div>
+</section>
+
+<section id="about" class="colored-section purple-melt">
+    <div class="container">
+        <h2 class="section-title hidden">Meet the <span class="highlight">Creator</span></h2>
+        <div class="about-card hidden">
+            <div class="avatar-circle">
+                <img src="https://mc-heads.net/avatar/ExraaXD/100" alt="ExraaXD">
+            </div>
+            <h3>Marsh</h3>
+            <span class="role-badge">Owner & Developer</span>
+            <p>
+                Hi, I'm Marsh (ign: ExraaXD). I created Monke SMP to bring back chaotic fun.
+                I code all plugins myself to ensure a smooth, lag-free experience. Welcome to my jungle.
+            </p>
+            <div class="socials">
+                <a href="https://youtube.com/@Marshgorilla" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@marshgorilla" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer><p>&copy; 2026 Monke SMP. Ooh Ooh Ah Ah.</p></footer>
+
+<script>
+    const INVITE_CODE = "Tj6EJsJHrR";
+    const MAX_PLAYERS = 20;
+    const BOT_COUNT = 3;
+
+    // --- SECRET MONKE MODE (Now on the Center Button) ---
+    let clickCount = 0;
+    const logoBtn = document.getElementById('secret-btn');
+
+    if (logoBtn) {
+        logoBtn.addEventListener('click', () => {
+            clickCount++;
+
+            // FLASH EFFECT
+            logoBtn.style.borderColor = "#f9d71c";
+            logoBtn.style.color = "#f9d71c";
+            logoBtn.style.transform = "scale(0.95)";
+
+            setTimeout(() => {
+                logoBtn.style.borderColor = "#555";
+                logoBtn.style.color = "#aaa";
+                logoBtn.style.transform = "scale(1)";
+            }, 100);
+
+            if (clickCount >= 6) {
+                activateMonkeMode();
+                clickCount = 0; // Reset
+            }
+        });
+    }
+
+    function activateMonkeMode() {
+        if(document.body.classList.contains('monke-mode')) return;
+
+        alert("🍌 OOH OOH AH AH! SECRET MONKE MODE ACTIVATED! 🍌");
+        document.body.classList.add('monke-mode');
+
+        // Add raining bananas
+        for(let i=0; i<50; i++) {
+            setTimeout(() => createRainBanana(), i * 150);
+        }
+    }
+
+    function createRainBanana() {
+        const b = document.createElement('div');
+        b.innerText = "🍌";
+        b.style.position = "fixed";
+        b.style.left = Math.random() * 100 + "vw";
+        b.style.top = "-50px";
+        b.style.fontSize = Math.random() * 30 + 20 + "px";
+        b.style.zIndex = "99999";
+        b.style.pointerEvents = "none";
+        b.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
+        document.body.appendChild(b);
+
+        // Remove after animation
+        setTimeout(() => { b.remove(); }, 5000);
+    }
+
+    // --- DISCORD STATS ---
+    async function fetchDiscordStats() {
+        try {
+            const response = await fetch(`https://discord.com/api/v9/invites/${INVITE_CODE}?with_counts=true`);
+            const data = await response.json();
+
+            if (data.guild && data.guild.icon) {
+                const iconUrl = `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png`;
+                const iconImg = document.getElementById('hero-server-icon');
+                if(iconImg) {
+                    iconImg.src = iconUrl;
+                    iconImg.style.display = "inline-block";
+                }
+            }
+
+            if (data.approximate_member_count) {
+                const totalMembers = data.approximate_member_count;
+                let realPlayers = totalMembers - BOT_COUNT;
+                if (realPlayers < 0) realPlayers = 0;
+
+                const spotsLeft = MAX_PLAYERS - realPlayers;
+
+                document.getElementById('member-count').innerText = `${realPlayers} / ${MAX_PLAYERS}`;
+
+                const percentage = (realPlayers / MAX_PLAYERS) * 100;
+                const fill = document.getElementById('progress-fill');
+                fill.style.width = `${percentage}%`;
+
+                const spotsText = document.getElementById('spots-left');
+                if (spotsLeft <= 5) {
+                    fill.style.background = "#ff3b3b";
+                    spotsText.innerHTML = `🔥 HURRY! Only <strong>${spotsLeft}</strong> spots left!`;
+                } else {
+                    spotsText.innerHTML = `🟢 ${spotsLeft} spots available to join.`;
+                }
+
+            } else { document.getElementById('member-count').innerText = "Unknown"; }
+        } catch (error) {
+            console.error(error);
+            document.getElementById('member-count').innerText = "Join Discord";
+        }
+    }
+    fetchDiscordStats();
+
+    // --- ANIMATIONS ---
+    window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader-wrapper');
+        if(loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) { entry.target.classList.add('show'); }
+        });
+    });
+    document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
