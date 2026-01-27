@@ -15,6 +15,13 @@
     --green-glow: #4caf50;
     --danger: #ff3b3b;
     --font-main: 'Minecraft', sans-serif;
+
+    /* DEFINING THE THEME COLORS FOR SMOOTH BLENDING */
+    --c-black: #0d120e;
+    --c-red: #3a0e0e;
+    --c-green: #0e260e;
+    --c-dark: #151515;
+    --c-purple: #1a0a24;
 }
 
 * {
@@ -25,8 +32,9 @@
     scroll-behavior: smooth;
 }
 
+/* Reset body to solid color to stop "muddy" mixing */
 body {
-    background-color: var(--bg-color);
+    background-color: var(--c-black);
     color: var(--text-color);
     overflow-x: hidden;
     transition: 0.5s;
@@ -150,7 +158,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, #0d120e 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, var(--c-black) 100%);
 }
 
 .hero-content {
@@ -254,28 +262,12 @@ body {
     user-select: none;
 }
 
-/* --- 5. SECTIONS --- */
+/* --- 5. SMOOTH SECTIONS (THE FIX) --- */
 .colored-section {
-    padding: 60px 20px;
+    padding: 100px 20px;
     width: 100%;
     position: relative;
     z-index: 10;
-}
-
-.red-melt {
-    background: linear-gradient(180deg, #0d120e 0%, #300a0a 100%);
-}
-
-.green-melt {
-    background: linear-gradient(180deg, #300a0a 0%, #051a0a 100%);
-}
-
-.dark-melt {
-    background: linear-gradient(180deg, #051a0a 0%, #151515 100%);
-}
-
-.purple-melt {
-    background: linear-gradient(180deg, #151515 0%, #1a0a24 100%);
 }
 
 .container {
@@ -290,6 +282,41 @@ body {
     text-shadow: 2px 2px #000;
 }
 
+/* We target IDs specifically to ensure the color flows 
+   from the previous section into the current one 
+*/
+
+/* 1. JOIN (Flows from Hero Black -> Red) */
+#join {
+    background: linear-gradient(to bottom, var(--c-black), var(--c-red));
+}
+
+/* 2. FEATURES (Flows from Red -> Green) */
+#features {
+    background: linear-gradient(to bottom, var(--c-red), var(--c-green));
+}
+
+/* 3. GALLERY (Flows from Green -> Dark Grey) */
+#gallery {
+    background: linear-gradient(to bottom, var(--c-green), var(--c-dark));
+}
+
+/* 4. RULES (Flows from Dark Grey -> Green) */
+#rules {
+    background: linear-gradient(to bottom, var(--c-dark), var(--c-green));
+}
+
+/* 5. FAQ (Flows from Green -> Purple) */
+#faq {
+    background: linear-gradient(to bottom, var(--c-green), var(--c-purple));
+}
+
+/* 6. ABOUT (Flows from Purple -> Black) */
+#about {
+    background: linear-gradient(to bottom, var(--c-purple), var(--c-black));
+}
+
+
 /* --- 6. CARDS & GRID --- */
 .grid {
     display: grid;
@@ -299,6 +326,7 @@ body {
 
 .card {
     background: rgba(22, 34, 26, 0.8);
+    /* Solid background for cards */
     padding: 40px 20px;
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -350,7 +378,7 @@ body {
     z-index: 2;
 }
 
-/* --- 7. GALLERY GRID (SQUARES) --- */
+/* --- 7. GALLERY GRID --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -362,7 +390,6 @@ body {
     overflow: hidden;
     border-radius: 15px;
     border: 2px solid #333;
-    /* THIS MAKES IT SQUARE */
     aspect-ratio: 1 / 1;
 }
 
@@ -370,7 +397,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* CROPS TO FILL SQUARE */
     transition: 0.5s;
 }
 
@@ -767,7 +793,37 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* --- MOBILE GALLERY TWEAKS (LIST VIEW) --- */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
     .gallery-item {
-        height: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100px;
+        aspect-ratio: auto;
+    }
+
+    .gallery-item img {
+        width: 120px;
+        height: 100%;
+        border-right: 2px solid #333;
+        flex-shrink: 0;
+    }
+
+    .gallery-caption {
+        position: static;
+        transform: none;
+        width: auto;
+        flex-grow: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0 10px;
+        font-size: 1rem;
     }
 }
