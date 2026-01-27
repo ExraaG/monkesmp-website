@@ -16,10 +16,10 @@
     --danger: #ff3b3b;
     --font-main: 'Minecraft', sans-serif;
 
-    /* DEFINING THE THEME COLORS FOR SMOOTH BLENDING */
+    /* DEFINED COLORS FOR BLENDING */
     --c-black: #0d120e;
-    --c-red: #3a0e0e;
-    --c-green: #0e260e;
+    --c-red: #300a0a;
+    --c-green: #051a0a;
     --c-dark: #151515;
     --c-purple: #1a0a24;
 }
@@ -32,7 +32,6 @@
     scroll-behavior: smooth;
 }
 
-/* Reset body to solid color to stop "muddy" mixing */
 body {
     background-color: var(--c-black);
     color: var(--text-color);
@@ -262,7 +261,8 @@ body {
     user-select: none;
 }
 
-/* --- 5. SMOOTH SECTIONS (THE FIX) --- */
+/* --- 5. SMOOTH WATERFALL SECTIONS --- */
+/* This connects each section's color to the next one smoothly */
 .colored-section {
     padding: 100px 20px;
     width: 100%;
@@ -282,40 +282,30 @@ body {
     text-shadow: 2px 2px #000;
 }
 
-/* We target IDs specifically to ensure the color flows 
-   from the previous section into the current one 
-*/
-
-/* 1. JOIN (Flows from Hero Black -> Red) */
+/* The fix: Specific gradients for each section ID */
 #join {
     background: linear-gradient(to bottom, var(--c-black), var(--c-red));
 }
 
-/* 2. FEATURES (Flows from Red -> Green) */
 #features {
     background: linear-gradient(to bottom, var(--c-red), var(--c-green));
 }
 
-/* 3. GALLERY (Flows from Green -> Dark Grey) */
 #gallery {
     background: linear-gradient(to bottom, var(--c-green), var(--c-dark));
 }
 
-/* 4. RULES (Flows from Dark Grey -> Green) */
 #rules {
     background: linear-gradient(to bottom, var(--c-dark), var(--c-green));
 }
 
-/* 5. FAQ (Flows from Green -> Purple) */
 #faq {
     background: linear-gradient(to bottom, var(--c-green), var(--c-purple));
 }
 
-/* 6. ABOUT (Flows from Purple -> Black) */
 #about {
     background: linear-gradient(to bottom, var(--c-purple), var(--c-black));
 }
-
 
 /* --- 6. CARDS & GRID --- */
 .grid {
@@ -326,7 +316,6 @@ body {
 
 .card {
     background: rgba(22, 34, 26, 0.8);
-    /* Solid background for cards */
     padding: 40px 20px;
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -793,7 +782,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* --- MOBILE GALLERY TWEAKS (LIST VIEW) --- */
+    /* MOBILE GALLERY (IMAGE LEFT, TEXT RIGHT) */
     .gallery-grid {
         grid-template-columns: 1fr;
     }
