@@ -15,8 +15,9 @@
     --green-glow: #4caf50;
     --danger: #ff3b3b;
     --font-main: 'Minecraft', sans-serif;
+    --font-body: 'Outfit', sans-serif;
 
-    /* DEFINED COLORS FOR BLENDING */
+    /* COLORS FOR BLENDING */
     --c-black: #0d120e;
     --c-red: #300a0a;
     --c-green: #051a0a;
@@ -28,8 +29,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.badge-out-now,
+.badge-exclusive,
+.owner-badge {
+    font-family: var(--font-main);
+}
+
+/* CUSTOM SCROLLBAR & SELECTION COLOR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--c-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green-glow);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+::selection {
+    background: var(--accent);
+    color: #000;
 }
 
 body {
@@ -38,6 +72,19 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     font-size: 20px;
+}
+
+/* --- ANIMATION: REVEAL ON SCROLL --- */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.8s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* --- UI COMPONENTS --- */
@@ -230,6 +277,41 @@ body {
     }
 }
 
+.server-status {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #666;
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .ip-box {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid #555;
@@ -261,8 +343,7 @@ body {
     user-select: none;
 }
 
-/* --- 5. SMOOTH WATERFALL SECTIONS --- */
-/* This connects each section's color to the next one smoothly */
+/* --- 5. SMOOTH WATERFALL SECTIONS (FIXED ORDER) --- */
 .colored-section {
     padding: 100px 20px;
     width: 100%;
@@ -282,32 +363,121 @@ body {
     text-shadow: 2px 2px #000;
 }
 
-/* The fix: Specific gradients for each section ID */
-#join {
+#players {
     background: linear-gradient(to bottom, var(--c-black), var(--c-red));
 }
 
-#features {
+#join {
     background: linear-gradient(to bottom, var(--c-red), var(--c-green));
 }
 
-#gallery {
+#features {
     background: linear-gradient(to bottom, var(--c-green), var(--c-dark));
 }
 
-#rules {
+#gallery {
     background: linear-gradient(to bottom, var(--c-dark), var(--c-green));
 }
 
-#faq {
+#rules {
     background: linear-gradient(to bottom, var(--c-green), var(--c-purple));
 }
 
-#about {
-    background: linear-gradient(to bottom, var(--c-purple), var(--c-black));
+#faq {
+    background: linear-gradient(to bottom, var(--c-purple), var(--c-dark));
 }
 
-/* --- 6. CARDS & GRID --- */
+#staff {
+    background: linear-gradient(to bottom, var(--c-dark), var(--c-red));
+}
+
+#about {
+    background: linear-gradient(to bottom, var(--c-red), var(--c-black));
+}
+
+/* --- 6. LIVE PLAYER LIST --- */
+.player-grid-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.player-head-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation: fadeIn 0.5s ease;
+    cursor: pointer;
+}
+
+.player-head-wrapper img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.player-head-wrapper:hover img {
+    transform: scale(1.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(249, 215, 28, 0.5);
+}
+
+.player-name {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.empty-server-text {
+    font-style: italic;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+.refresh-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.refresh-btn:hover {
+    background: var(--accent);
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* OWNER BADGE */
+.owner-badge {
+    background-color: var(--accent);
+    color: black;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* --- 7. CARDS & GRID --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -367,7 +537,29 @@ body {
     z-index: 2;
 }
 
-/* --- 7. GALLERY GRID --- */
+.coming-soon-card {
+    opacity: 0.7;
+    border-style: dashed;
+}
+
+.badge-soon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #666;
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.coming-soon-card:hover {
+    opacity: 1;
+    border-color: #666;
+    background: rgba(22, 34, 26, 0.8);
+}
+
+/* --- 8. GALLERY GRID --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -410,7 +602,7 @@ body {
     transform: translateY(0);
 }
 
-/* --- 8. FAQ --- */
+/* --- 9. FAQ --- */
 .faq-wrapper {
     max-width: 800px;
     margin: 0 auto;
@@ -457,7 +649,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- 9. JOIN CARD --- */
+/* --- 10. JOIN CARD --- */
 .join-card {
     background: rgba(0, 0, 0, 0.6);
     border: 2px solid var(--danger);
@@ -486,6 +678,22 @@ body {
     color: var(--danger);
     font-size: 1.8rem;
     margin-bottom: 10px;
+}
+
+.join-perks {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    color: #bbb;
+    font-size: 1rem;
+}
+
+.join-perks i {
+    color: var(--accent);
+    margin-right: 5px;
 }
 
 .member-counter-box {
@@ -537,6 +745,8 @@ body {
     border: 2px solid #5865F2;
     width: 100%;
     max-width: 300px;
+    font-family: var(--font-body);
+    font-weight: bold;
 }
 
 .discord-join-btn:hover {
@@ -563,7 +773,73 @@ body {
     }
 }
 
-/* --- 10. RULES & ABOUT --- */
+/* --- NEW: STAFF SECTION --- */
+.staff-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.staff-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.staff-card img {
+    width: 80px;
+    height: 160px;
+    /* Tall body render */
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.staff-role {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.owner-role {
+    background: var(--accent);
+    color: black;
+}
+
+.admin-role {
+    background: var(--danger);
+    color: white;
+}
+
+.staff-card h3 {
+    margin-bottom: 5px;
+    color: white;
+}
+
+.staff-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- 11. RULES & ABOUT --- */
 .rule-list {
     list-style: none;
     font-size: 1.1rem;
@@ -635,7 +911,7 @@ body {
     transform: scale(1.2);
 }
 
-/* --- 11. LOADER --- */
+/* --- 12. LOADER & PARTICLES --- */
 .loader-wrapper {
     position: fixed;
     top: 0;
@@ -661,7 +937,6 @@ body {
     }
 }
 
-/* --- 12. PARTICLES & MONKE MODE --- */
 .particle {
     position: absolute;
     font-size: 2rem;
@@ -735,6 +1010,24 @@ footer {
     color: #555;
 }
 
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    color: #555;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
 /* --- MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
     .navbar {
@@ -782,7 +1075,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* MOBILE GALLERY (IMAGE LEFT, TEXT RIGHT) */
+    /* MOBILE GALLERY (LIST VIEW) */
     .gallery-grid {
         grid-template-columns: 1fr;
     }
