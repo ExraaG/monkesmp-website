@@ -26,12 +26,17 @@
 
 <nav class="navbar">
     <div class="logo">MONKE<span class="highlight">SMP</span></div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#players">Players</a></li>
-        <li><a href="#rules">Rules</a></li>
-        <li><a href="#staff">Staff</a></li>
-        <li><a href="#join" class="nav-cta">JOIN SMP</a></li>
+        <li><a href="#features" onclick="toggleMenu()">Features</a></li>
+        <li><a href="#players" onclick="toggleMenu()">Players</a></li>
+        <li><a href="#rules" onclick="toggleMenu()">Rules</a></li>
+        <li><a href="#staff" onclick="toggleMenu()">Staff</a></li>
+        <li><a href="#join" onclick="toggleMenu()" class="nav-cta">JOIN SMP</a></li>
     </ul>
 </nav>
 
@@ -211,6 +216,10 @@
     const BOT_COUNT = 3;
     const SERVER_IP = "monkesmp.com"; // Restored original IP
     const OWNER_IGN = "MarshGorilla"; // Updated IGN
+
+    function toggleMenu() { 
+        document.querySelector('.nav-links').classList.toggle('active'); 
+    }
 
     // --- Hover Effects for Bento Cards ---
     document.querySelectorAll('.bento-item').forEach(item => {
