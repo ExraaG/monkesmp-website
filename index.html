@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Monke SMP | Return to Monke</title>
-    <meta name="description" content="The Wildest Lifesteal SMP. Join the tribe, wage war, and steal hearts.">
+    <title>Monke SMP | Premium Lifesteal Experience</title>
+    <meta name="description" content="The Wildest Lifesteal SMP. Premium Survival, Custom Features, Zero Lag.">
     <meta property="og:title" content="Monke SMP | Return to Monke">
-    <meta property="og:description" content="The Wildest Lifesteal SMP. Join the tribe, wage war, and steal hearts.">
+    <meta property="og:description" content="The Wildest Lifesteal SMP. Premium Survival, Custom Features, Zero Lag.">
     <meta property="og:image" content="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/1.20.1/items/golden_apple.png">
-    <meta property="og:color" content="#f9d71c">
+    <meta property="og:color" content="#FFE135">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍌</text></svg>">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,235 +26,178 @@
 
 <nav class="navbar">
     <div class="logo">MONKE<span class="highlight">SMP</span></div>
-    
-    <div class="hamburger" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
     <ul class="nav-links">
-        <li><a href="#features" onclick="toggleMenu()">Features</a></li>
-        <li><a href="#players" onclick="toggleMenu()">Online</a></li>
-        <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
-        <li><a href="#staff" onclick="toggleMenu()">Staff</a></li>
-        <li><a href="#join" onclick="toggleMenu()" class="nav-cta">JOIN</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#players">Players</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#staff">Staff</a></li>
+        <li><a href="#join" class="nav-cta">JOIN SMP</a></li>
     </ul>
 </nav>
 
 <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <img id="hero-server-icon" src="" alt="" class="server-logo-float" style="display:none;">
+    <div class="hero-bg"></div>
+    <div class="hero-content reveal">
+        <img id="hero-server-icon" src="https://raw.githubusercontent.com/ExraaG/monkesmp-website/f975c52db5b9213772bd565e00bd1c886caffa0a/fonts/2026-01-26_19.55.07.png" alt="Server Logo" class="server-logo-float">
 
         <div class="server-status" id="server-status-badge">
             <span class="status-dot" id="status-dot"></span> 
-            <span id="status-text">Checking Status...</span>
+            <span id="status-text">Pinging Server...</span>
         </div>
 
-        <h1 class="reveal">RETURN TO <span class="highlight-text">MONKE</span></h1>
-        <p class="reveal">The Wildest Lifesteal Experience in the Jungle.</p>
+        <h1>RETURN TO <span class="highlight-text">MONKE</span></h1>
+        <p class="tagline">The most optimized, intense, and premium Lifesteal SMP experience.</p>
 
-        <div class="ip-box no-select reveal" id="secret-btn">
+        <a href="https://discord.gg/Tj6EJsJHrR" target="_blank" class="ip-box" style="text-decoration: none;">
             <i class="fas fa-lock"></i>
-            <span id="ip-text">IP: [ HIDDEN ]</span>
-        </div>
-        <p class="click-hint reveal"><small>(Join Discord to get the IP)</small></p>
+            <span id="ip-text">IP: Restricted</span>
+        </a>
+        <p class="click-hint">Join Discord to get the IP</p>
     </div>
-
-    <div class="particle p1">🍃</div>
-    <div class="particle p2">🍌</div>
-    <div class="particle p3">🍃</div>
-    <div class="particle p4">🌴</div>
 </header>
 
-<section id="players" class="colored-section">
+<section id="features">
     <div class="container">
-        <h2 class="section-title reveal">Who is <span class="highlight">Online?</span></h2>
-        <div id="player-list-container" class="reveal">
-            <p id="player-loading-text">Scanning the Jungle...</p>
-        </div>
-        <div class="refresh-box reveal">
-            <button onclick="fetchServerStatus()" class="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh List</button>
+        <h2 class="section-title reveal">Premium <span class="highlight">Features</span></h2>
+        
+        <div class="bento-grid">
+            <div class="bento-item bento-lifesteal reveal">
+                <div class="icon-wrapper" style="color: #ff4757;"><i class="fas fa-heart"></i></div>
+                <h3>Lifesteal Core</h3>
+                <p>An unforgiving environment. Hunt down players, steal their maximum hearts, and grow stronger. If you lose all your hearts, you face an automatic temp-ban. Only the strongest apes survive.</p>
+            </div>
+            
+            <div class="bento-item bento-totem reveal">
+                <div class="icon-wrapper" style="color: #eccc68;"><i class="fas fa-shield-alt"></i></div>
+                <h3>Totem Cooldown</h3>
+                <p>No more totem spam meta. A strict 30-second cooldown ensures PvP takes actual skill and stakes remain incredibly high.</p>
+            </div>
+
+            <div class="bento-item bento-revive reveal">
+                <div class="icon-wrapper" style="color: #7bed9f;"><i class="fas fa-gem"></i></div>
+                <h3>Revive Beacons</h3>
+                <p>Lost a tribal brother? Craft expensive Revive Beacons to bring back banned players from the dead.</p>
+            </div>
+
+            <div class="bento-item bento-tracker reveal">
+                <div class="icon-wrapper" style="color: #70a1ff;"><i class="fas fa-compass"></i></div>
+                <h3>Player Trackers</h3>
+                <p>Craftable compasses allow you to hunt down the nearest player. No one can hide forever in the jungle.</p>
+            </div>
+
+            <div class="bento-item bento-soon-1 reveal">
+                <span class="badge-soon">IN DEV</span>
+                <div class="icon-wrapper" style="color: #a4b0be;"><i class="fas fa-coins"></i></div>
+                <h3>Banana Economy</h3>
+                <p>Trade the sacred fruit in a dynamic player-driven economy.</p>
+            </div>
+
+            <div class="bento-item bento-soon-2 reveal">
+                <span class="badge-soon">IN DEV</span>
+                <div class="icon-wrapper" style="color: #a4b0be;"><i class="fas fa-users"></i></div>
+                <h3>Gorilla Tribes (Clans)</h3>
+                <p>Form clans, claim your territory, and wage massive gorilla warfare against rivals.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="join" class="colored-section">
-    <div class="container">
-        <h2 class="section-title reveal">Join the <span class="highlight">Tribe</span></h2>
+<section id="join" class="join-section">
+    <div class="container reveal">
+        <div class="premium-join-card">
+            <div class="join-content">
+                <div class="badge-exclusive-premium">WHITELIST ONLY</div>
+                <h3>Gain Access to the Jungle</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">
+                    We enforce a strict player cap to guarantee flawless 20 TPS performance. Join the Discord to apply for the whitelist.
+                </p>
 
-        <div class="join-card reveal">
-            <div class="badge-exclusive">LIMITED SPOTS</div>
-            <h3>⚠️ EXCLUSIVE ACCESS ⚠️</h3>
-            <p>To keep the gameplay high-quality and lag-free, the server is capped at <strong>20 Players</strong>.</p>
-
-            <ul class="join-perks">
-                <li><i class="fas fa-shield-alt"></i> DDoS Protected</li>
-                <li><i class="fas fa-microchip"></i> 24/7 Uptime</li>
-                <li><i class="fas fa-memory"></i> Zero Lag</li>
-            </ul>
-
-            <div class="member-counter-box">
-                <div class="status-text">
-                    <span><i class="fas fa-users"></i> Discord Members:</span>
-                    <span id="member-count" class="highlight">Loading...</span>
+                <div class="join-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="member-count">--</div>
+                        <div class="stat-label">Discord Members</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">20</div>
+                        <div class="stat-label">Slot Cap</div>
+                    </div>
                 </div>
-                <div class="progress-bar-bg">
-                    <div id="progress-fill" class="progress-bar-fill"></div>
-                </div>
-                <p id="spots-left" class="spots-text">checking availability...</p>
-            </div>
 
-            <a href="https://discord.gg/Tj6EJsJHrR" id="discord-btn" target="_blank" class="discord-join-btn pulse-btn">
-                <i class="fab fa-discord"></i> Get IP on Discord
-            </a>
-        </div>
-    </div>
-</section>
-
-<section id="features" class="colored-section">
-    <div class="container">
-        <h2 class="section-title reveal">Jungle <span class="highlight">Features</span></h2>
-        <div class="grid">
-            <div class="card reveal">
-                <div class="emoji-icon">❤️</div>
-                <h3>LIFESTEAL</h3>
-                <p>Hunt players. Steal hearts. If you hit 0 hearts, you are <strong>banned</strong>.</p>
-            </div>
-            <div class="card reveal">
-                <div class="emoji-icon">🗿</div>
-                <h3>TOTEM COOLDOWN</h3>
-                <p>No totem spamming. <strong>30s cooldown</strong> means death is real.</p>
-            </div>
-            <div class="card reveal">
-                <div class="emoji-icon">⚓</div>
-                <h3>REVIVE BEACONS</h3>
-                <p>Craft beacons to revive fallen teammates from the dead.</p>
-            </div>
-            <div class="card reveal">
-                <div class="emoji-icon">🧭</div>
-                <h3>PLAYER TRACKER</h3>
-                <p>Craftable compasses to hunt down the nearest player.</p>
-            </div>
-            <div class="card coming-soon-card reveal">
-                <div class="badge-soon">COMING SOON</div>
-                <div class="emoji-icon">🏰</div>
-                <h3>GORILLA WARFARE</h3>
-                <p>Create Clans, claim land, and wage war.</p>
-            </div>
-            <div class="card coming-soon-card reveal">
-                <div class="badge-soon">COMING SOON</div>
-                <div class="emoji-icon">🍌</div>
-                <h3>BANANA ECONOMY</h3>
-                <p>Trade bananas for custom items and rare loot.</p>
+                <a href="https://discord.gg/Tj6EJsJHrR" target="_blank" class="discord-btn-premium">
+                    <i class="fab fa-discord"></i> Connect Discord
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="gallery" class="colored-section">
+<section id="players">
     <div class="container">
-        <h2 class="section-title reveal">Server <span class="highlight">Gallery</span></h2>
-        <div class="gallery-grid">
-            <div class="gallery-item reveal">
-                <img src="https://raw.githubusercontent.com/ExraaG/monkesmp-website/f975c52db5b9213772bd565e00bd1c886caffa0a/fonts/2026-01-26_19.55.36.png" alt="Spawn">
-                <div class="gallery-caption">SPAWN ARENA</div>
+        <h2 class="section-title reveal">Live <span class="highlight">Status</span></h2>
+        
+        <div class="player-list-wrapper reveal">
+            <div id="player-list-container" class="player-grid-box">
+                <p id="player-loading-text" style="color: var(--text-muted); text-align: center; width: 100%;">Locating players...</p>
             </div>
-            <div class="gallery-item reveal">
-                <img src="https://raw.githubusercontent.com/ExraaG/monkesmp-website/f975c52db5b9213772bd565e00bd1c886caffa0a/fonts/2026-01-26_19.55.07.png" alt="Cherry Grove">
-                <div class="gallery-caption">CHERRY GROVE</div>
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://raw.githubusercontent.com/ExraaG/monkesmp-website/f975c52db5b9213772bd565e00bd1c886caffa0a/fonts/2026-01-26_19.56.18.png" alt="Mountains">
-                <div class="gallery-caption">THE MOUNTAINS</div>
-            </div>
+            
+            <button onclick="fetchServerStatus()" class="refresh-btn">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
         </div>
     </div>
 </section>
 
-<section id="rules" class="colored-section">
+<section id="rules">
     <div class="container">
-        <h2 class="section-title reveal">Law of the <span class="highlight">Jungle</span></h2>
-        <ul class="rule-list reveal">
-            <li><i class="fas fa-ban red-icon"></i> No Hacking or X-Ray (Instant Ban)</li>
-            <li><i class="fas fa-skull red-icon"></i> No Combat Logging (You die instantly)</li>
-            <li><i class="fas fa-check green-icon"></i> Griefing & Stealing is ALLOWED</li>
-            <li><i class="fas fa-handshake-slash green-icon"></i> Betrayal is part of the game</li>
-            <li><i class="fas fa-user-slash red-icon"></i> No Alt Accounts (Fair Play Only)</li>
-            <li><i class="fas fa-comment-slash red-icon"></i> No Slurs or Toxicity in Chat</li>
-        </ul>
-    </div>
-</section>
-
-<section id="faq" class="colored-section">
-    <div class="container">
-        <h2 class="section-title reveal">F.A.Q.</h2>
-        <div class="faq-wrapper">
+        <h2 class="section-title reveal">Server <span class="highlight">Laws</span></h2>
+        <div class="faq-grid">
             <details class="faq-item reveal">
-                <summary>Is the server Cracked or Premium?</summary>
-                <p>The server is currently <strong>Premium only</strong>. We ensure high-quality security.</p>
+                <summary>Is griefing and stealing allowed?</summary>
+                <p><strong>Yes.</strong> This is an anarchy/survival experience at its core. Base raiding, stealing, and griefing are fully permitted. Protect your chests and build far away.</p>
             </details>
             <details class="faq-item reveal">
-                <summary>What version does Monke SMP run on?</summary>
-                <p>We are running on <strong>Minecraft 1.21.11</strong>. Please update your client!</p>
+                <summary>What are the bannable offenses?</summary>
+                <p>Hacking (X-Ray, KillAura, etc.), exploiting dupes, DDoS threats, Doxxing, and extreme toxicity/slurs are zero-tolerance. Combat Logging during PvP results in automatic death.</p>
             </details>
             <details class="faq-item reveal">
-                <summary>How do I revive my friend?</summary>
-                <p>You must craft a <strong>Revive Beacon</strong> using 4 Diamond Blocks, 4 Netherite Ingots, and a Nether Star.</p>
+                <summary>Are alliances allowed?</summary>
+                <p>Yes, teaming is allowed. However, betrayal is also allowed. Trust wisely.</p>
             </details>
             <details class="faq-item reveal">
-                <summary>Is teaming allowed?</summary>
-                <p>Yes! Teaming is fully allowed, but remember: <strong>Betrayal is also allowed.</strong> Trust no one.</p>
-            </details>
-            <details class="faq-item reveal">
-                <summary>How do I report a hacker?</summary>
-                <p>Open a ticket in our Discord server and provide video evidence.</p>
+                <summary>What version of Minecraft?</summary>
+                <p>The server supports the latest versions. We highly recommend using 1.21.11 for the best experience.</p>
             </details>
         </div>
     </div>
 </section>
 
-<section id="staff" class="colored-section">
+<section id="staff">
     <div class="container">
-        <h2 class="section-title reveal">Tribe <span class="highlight">Leaders</span></h2>
+        <h2 class="section-title reveal">Tribe <span class="highlight">Elders</span></h2>
         
         <div class="staff-grid">
-            
             <div class="staff-card reveal">
-                <div class="staff-role owner-role">OWNER</div>
-                <img src="https://mc-heads.net/body/ExraaXD/100" alt="Marsh">
-                <h3>MARSH</h3>
-                <p style="color:var(--accent); font-size:0.9rem; margin-bottom:5px;">IGN: ExraaXD</p>
-                <p>The Big Monke. Creator & Developer.</p>
+                <div class="staff-role role-owner">OWNER</div>
+                <img src="https://mc-heads.net/body/MarshGorilla/100" alt="Marsh">
+                <h3>Marsh</h3>
+                <div class="ign">IGN: MarshGorilla</div>
+                <p class="desc">Lead Developer & Systems Architect. Created the custom Monke core plugin prioritizing TPS and smooth PvP.</p>
             </div>
 
             <div class="staff-card reveal">
-                <div class="staff-role admin-role">MANAGER</div>
+                <div class="staff-role role-admin">MANAGER</div>
                 <img src="https://mc-heads.net/body/mareniguess2011/100" alt="Maren">
-                <h3>MAREN</h3>
-                <p style="color:var(--accent); font-size:0.9rem; margin-bottom:5px;">IGN: mareniguess2011</p>
-                <p>Admin & Server Management.</p>
+                <h3>Maren</h3>
+                <div class="ign">IGN: mareniguess2011</div>
+                <p class="desc">Community Manager & Head Admin. Ensuring the jungle stays wild but fair.</p>
             </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="about" class="colored-section">
-    <div class="container">
-        <h2 class="section-title reveal">Meet the <span class="highlight">Creator</span></h2>
-        <div class="about-card reveal">
-            <div class="avatar-circle">
-                <img src="https://mc-heads.net/avatar/ExraaXD/100" alt="ExraaXD">
-            </div>
-            <h3>MARSH</h3>
-            <span class="role-badge">Owner & Developer</span>
-            <p>Hi, I'm Marsh (ign: ExraaXD). I created Monke SMP to bring back chaotic fun. I code all plugins myself to ensure a smooth, lag-free experience.</p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Monke SMP. Ooh Ooh Ah Ah.</p>
+    <div class="logo" style="margin-bottom: 10px; font-size: 1.5rem;">MONKE<span class="highlight" style="font-family: var(--font-heading); color: var(--accent-banana);">SMP</span></div>
+    <p style="color: var(--text-muted);">&copy; 2026 Premium Lifesteal Experience. All rights reserved.</p>
     <div class="footer-socials">
         <a href="https://discord.gg/bsScvshqv" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
         <a href="https://youtube.com/@Marshgorilla" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
@@ -268,160 +206,125 @@
 </footer>
 
 <script>
-    const INVITE_CODE = "Tj6EJsJHrR"; // MONKE SMP CODE FOR STATS
+    const INVITE_CODE = "Tj6EJsJHrR";
     const MAX_PLAYERS = 20;
     const BOT_COUNT = 3;
-    const SERVER_IP = "monkesmp.com";
-    const OWNER_IGN = "ExraaXD"; 
+    const SERVER_IP = "monkesmp.com"; // Restored original IP
+    const OWNER_IGN = "MarshGorilla"; // Updated IGN
 
+    // --- Hover Effects for Bento Cards ---
+    document.querySelectorAll('.bento-item').forEach(item => {
+        item.addEventListener('mousemove', e => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            item.style.setProperty('--mouse-x', `${x}px`);
+            item.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // --- Scroll Reveal ---
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         var windowHeight = window.innerHeight;
         for (var i = 0; i < reveals.length; i++) {
             var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementBottom = reveals[i].getBoundingClientRect().bottom;
             var elementVisible = 50; 
-            if (elementTop < windowHeight - elementVisible && elementBottom > 0) {
+            if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("active");
-            } else {
-                reveals[i].classList.remove("active");
             }
         }
     }
     window.addEventListener("scroll", reveal);
-    reveal();
+    
 
+
+    // --- Server Status Fetching ---
     async function fetchServerStatus() {
         const dot = document.getElementById('status-dot');
         const text = document.getElementById('status-text');
         const playerContainer = document.getElementById('player-list-container');
-        playerContainer.innerHTML = `<p id="player-loading-text">Scanning the Jungle...</p>`;
+        playerContainer.innerHTML = `<p id="player-loading-text" style="color: var(--text-muted); text-align: center; width: 100%;">Syncing With Node...</p>`;
 
         try {
-            const response = await fetch(`https://api.mcsrvstat.us/3/${SERVER_IP}`);
+            const response = await fetch(`https://api.mcsrvstat.us/3/${SERVER_IP}`); 
             const data = await response.json();
 
             if (data.online) {
-                dot.style.background = "#4caf50"; 
-                dot.style.boxShadow = "0 0 10px #4caf50";
-                dot.style.animation = "pulse 2s infinite";
+                dot.style.background = "var(--accent-green)"; 
+                dot.style.boxShadow = "0 0 15px var(--accent-green)";
                 text.innerText = `Online (${data.players.online}/${data.players.max})`;
                 
-                if (data.players.list && data.players.list.length > 0) {
-                    let html = `<div class="player-grid-box">`;
-                    data.players.list.forEach(player => {
-                        let badgeHtml = "";
-                        if(player.name === OWNER_IGN) { badgeHtml = `<span class="owner-badge">OWNER</span>`; }
+                let pList = data.players.list;
+
+                if (pList && pList.length > 0) {
+                    let html = ``;
+                    pList.forEach(p => {
+                        let badge = (p.name === OWNER_IGN) ? `<div class="owner-badge">OWNER</div>` : '';
                         html += `
-                            <div class="player-head-wrapper" title="${player.name}">
-                                <img src="https://mc-heads.net/avatar/${player.name}/50" alt="${player.name}">
-                                <span class="player-name">${player.name} ${badgeHtml}</span>
+                            <div class="player-card">
+                                <img src="https://mc-heads.net/avatar/${p.name}/64" alt="${p.name}">
+                                ${badge}
+                                <span class="player-name" title="${p.name}">${p.name}</span>
                             </div>
                         `;
                     });
-                    html += `</div>`;
                     playerContainer.innerHTML = html;
                 } else {
-                    playerContainer.innerHTML = `<p class="empty-server-text">🌿 The Jungle is quiet... (No players online)</p>`;
+                    playerContainer.innerHTML = `<p style="color:var(--text-muted); width: 100%; text-align: center;">No players currently online.</p>`;
                 }
             } else {
-                dot.style.background = "#ff3b3b"; 
+                dot.style.background = "var(--accent-red)"; 
                 dot.style.boxShadow = "none";
-                dot.style.animation = "none";
                 text.innerText = "Offline";
-                playerContainer.innerHTML = `<p class="offline-server-text">🔴 Server is currently Offline.</p>`;
+                playerContainer.innerHTML = `<p style="color:var(--accent-red); width: 100%; text-align: center;">Connection Refused.</p>`;
             }
         } catch (error) {
-            dot.style.background = "#ff3b3b";
-            text.innerText = "Status Unknown";
-            playerContainer.innerHTML = `<p>Could not load player list.</p>`;
+            dot.style.background = "var(--accent-red)";
+            text.innerText = "API Error";
+            playerContainer.innerHTML = `<p style="color:var(--text-muted); width: 100%; text-align: center;">Failed to fetch API.</p>`;
         }
     }
-    fetchServerStatus();
 
-    function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
-
-    window.onscroll = function() {
-        const btn = document.getElementById("back-to-top");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { btn.classList.add("show"); } 
-        else { btn.classList.remove("show"); }
-        reveal(); 
-    };
-    function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-
-    let clickCount = 0;
-    const logoBtn = document.getElementById('secret-btn');
-    if (logoBtn) {
-        logoBtn.addEventListener('click', () => {
-            clickCount++;
-            logoBtn.style.transform = "scale(0.95)";
-            logoBtn.style.borderColor = "#f9d71c"; 
-            setTimeout(() => { logoBtn.style.transform = "scale(1)"; logoBtn.style.borderColor = "#555"; }, 100);
-            if (clickCount >= 6) { activateMonkeMode(); clickCount = 0; }
-        });
-    }
-
-    function activateMonkeMode() {
-        if(document.body.classList.contains('monke-mode')) return;
-        alert("🍌 OOH OOH AH AH! SECRET MONKE MODE ACTIVATED! 🍌");
-        document.body.classList.add('monke-mode');
-        for(let i=0; i<50; i++) { setTimeout(() => createRainBanana(), i * 150); }
-    }
-
-    function createRainBanana() {
-        const b = document.createElement('div');
-        b.innerText = "🍌";
-        b.style.position = "fixed"; b.style.left = Math.random() * 100 + "vw"; b.style.top = "-50px";
-        b.style.fontSize = Math.random() * 30 + 20 + "px"; b.style.zIndex = "99999"; b.style.pointerEvents = "none";
-        b.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
-        document.body.appendChild(b);
-        setTimeout(() => { b.remove(); }, 5000);
-    }
-
+    // --- Discord Integration ---
     async function fetchDiscordStats() {
         try {
             const response = await fetch(`https://discord.com/api/v9/invites/${INVITE_CODE}?with_counts=true`);
             const data = await response.json();
+            
             if (data.guild && data.guild.icon) {
-                const iconUrl = `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png`;
+                const iconUrl = `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png?size=256`;
                 const iconImg = document.getElementById('hero-server-icon');
-                if(iconImg) { iconImg.src = iconUrl; iconImg.style.display = "inline-block"; }
+                if(iconImg) { iconImg.src = iconUrl; }
             }
+
             if (data.approximate_member_count) {
                 let realPlayers = Math.max(0, data.approximate_member_count - BOT_COUNT);
                 document.getElementById('member-count').innerText = `${realPlayers}`;
-                document.getElementById('progress-fill').style.width = `${(realPlayers/MAX_PLAYERS)*100}%`;
-                
-                const spotsText = document.getElementById('spots-left');
-                const spotsLeft = MAX_PLAYERS - realPlayers;
-                if (spotsLeft <= 0) {
-                    spotsText.innerHTML = `⛔ <strong>SERVER FULL</strong> (Join Queue in Discord)`;
-                    spotsText.style.color = "#ff5555";
-                } else if (spotsLeft <= 5) {
-                    spotsText.innerHTML = `🔥 HURRY! Only <strong>${spotsLeft}</strong> spots left!`;
-                    spotsText.style.color = "#ccc";
-                } else {
-                    spotsText.innerHTML = `🟢 ${spotsLeft} spots available to join.`;
-                    spotsText.style.color = "#ccc";
-                }
-            } else { 
-                document.getElementById('member-count').innerText = "Unknown";
-                document.getElementById('spots-left').innerText = "Check Discord for info";
             }
         } catch (error) { 
-            document.getElementById('member-count').innerText = "Join Discord"; 
-            document.getElementById('spots-left').innerText = "Check Discord for slots";
+            // Fallback
         }
     }
-    fetchDiscordStats();
 
-    window.addEventListener('load', () => {
+    // --- Init ---
+    window.onload = () => {
         const loader = document.querySelector('.loader-wrapper');
-        if(loader) {
-            loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 500);
-        }
-    });
+        setTimeout(() => { 
+            loader.style.opacity = '0'; 
+            setTimeout(() => loader.style.display = 'none', 500);
+            reveal();
+            fetchServerStatus();
+            fetchDiscordStats();
+        }, 800);
+    };
+
+    window.onscroll = function() {
+        const btn = document.getElementById("back-to-top");
+        if (document.documentElement.scrollTop > 500) { btn.classList.add("show"); } 
+        else { btn.classList.remove("show"); }
+    };
+    function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 </script>
 </body>
 </html>
